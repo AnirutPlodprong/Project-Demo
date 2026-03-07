@@ -14,7 +14,7 @@ const Login: React.FC = () => {
     setError('');
 
     if (!email || !password) {
-      setError('กรุณากรอกข้อมูลให้ครบถ้วน');
+      setError('กรุณากรอกข้อม');
       return;
     }
 
