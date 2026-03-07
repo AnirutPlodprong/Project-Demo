@@ -102,7 +102,7 @@ const Menu: React.FC = () => {
             <Calendar size={20} />
             <span>จัดการปฏิทิน</span>
           </div>
-          <div className="sidebar-item">
+          <div className="sidebar-item" onClick={() => navigate('/customers')}>
             <User size={20} />
             <span>ข้อมูลลูกค้า</span>
           </div>

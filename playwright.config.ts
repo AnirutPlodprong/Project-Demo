@@ -11,23 +11,19 @@ export default defineConfig({
     baseURL: 'http://localhost:5173',
     trace: 'on-first-retry',
   },
-  projects: [
+  projects: [ //ระบุว่าให้รันบน Browser อะไรบ้าง
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'chromium', //ชื่อโปรเจค
+      use: { ...devices['Desktop Chrome'] }, //Browser ที่จะให้รัน
     },
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     }
   ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5173',
-    reuseExistingServer: !process.env.CI,
+  webServer: { //ระบุว่าให้รัน Server อะไรบ้าง
+    command: 'npm run dev', //คำสั่งให้รัน
+    url: 'http://localhost:5173', //URL ที่จะให้รัน
+    reuseExistingServer: !process.env.CI, //ถ้ามี Server อยู่แล้วให้ใช้ Server นั้น
   },
 });

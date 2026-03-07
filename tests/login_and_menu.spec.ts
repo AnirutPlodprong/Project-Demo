@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Vela Resort - Authentication and Menu Flow', () => {
+test.describe('Vela Resort - Authentication and Menu Flow', () => { //Test Scenario
 
   test('should display login page when accessing the root url', async ({ page }) => {
     // Navigate to root
