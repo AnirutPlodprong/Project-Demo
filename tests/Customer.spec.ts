@@ -17,6 +17,15 @@ test.describe('Resort Custmoer information', () => {
         expect(rowCount).toBeGreaterThan(0);
     })
 
+    test('Fillter Customer All Status' , async ({page}) => {
+        await page.getByRole('button', { name: 'ทั้งหมด', exact: true }).click();
+        await page.waitForTimeout(1000);
+
+        const statusCells = page.locator('table tbody tr td:nth-child(6)');
+        const rowCount = await statusCells.count();
+        expect(rowCount).toBeGreaterThan(0);
+    })
+
     test('Filter Customer that status active' , async ({page}) => {
         await page.getByRole('button', { name: 'ใช้งาน', exact: true }).click();
         await page.waitForTimeout(1000);
