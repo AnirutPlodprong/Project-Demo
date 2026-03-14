@@ -5,4 +5,5 @@ export const verifyLoginPage = async ({page}: {page: Page}) => {
     await page.locator('input#email-input').fill('admin@resort.com')
     await page.locator('input#password-input').fill('123456')
     await page.locator('button#login-button').click()
+    await expect(page).toHaveURL(/.*menu/, { timeout: 5000 });
 }

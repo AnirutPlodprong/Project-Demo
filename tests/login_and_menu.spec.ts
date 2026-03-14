@@ -2,6 +2,13 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Vela Resort - Authentication and Menu Flow', () => { //Test Scenario
 
+  test.beforeEach(async ({page}) => {
+    await page.goto('/login')
+    await page.locator('input#email-input').fill('admin@resort.com')
+    await page.locator('input#password-input').fill('123456')
+    await page.locator('button#login-button').click()
+  })
+
   test('should display login page when accessing the root url', async ({ page }) => {
     // Navigate to root
     await page.goto('/');
