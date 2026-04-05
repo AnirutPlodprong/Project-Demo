@@ -177,6 +177,7 @@ const Menu: React.FC = () => {
             ))}
           </div>
         </main>
+        
       </div>
     </div>
   );
